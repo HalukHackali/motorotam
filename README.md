@@ -12,7 +12,7 @@
 
   
   </div>
-  
+
 ---
 
 <div align="center">
@@ -28,23 +28,29 @@ or <a href="mailto:halukh@protonmail.com"><b>email</b></a> me.
 
 ---
 
-#  <img src="https://github.com/HalukHackali/.png" width="60"> motorotam
+#  <img src="https://github.com/HalukHackali/.png" width="60"> MotoRotam Mobil App
+----
+www.motorotam.com
+----
+<div>
+<h2> 
+    <a href="https://www.figma.com/file/KUDIXTNDmI3sdfFlzQ93mc/MotoRotam_2?node-id=0%3A1"><img src="https://github.com/HalukHackali/motorotam/blob/master/assets/images/figma_macos_bigsur_icon_190183.png?raw=true" width="60px"></a> <a href="https://www.figma.com/file/KUDIXTNDmI3sdfFlzQ93mc/MotoRotam_2?node-id=0%3A1"><b>Figma'da Göster</b></a>
+  </h2>
+</div>
 
-Motorotam - Mobil App
+<div align="center">
+<img src="https://raw.githubusercontent.com/HalukHackali/motorotam/master/assets/images/Google%20Pixel%202%20-%201.png?token=GHSAT0AAAAAABTPO7Q64GYCOQFLOK6SJLWMYTW523Q">
 
-### www.motorotam.com
-
-# [![MotoRotam Mobil App İndir!](https://raw.githubusercontent.com/HalukHackali/.png)](http://)
-
-
+<img src="https://raw.githubusercontent.com/HalukHackali/motorotam/master/assets/images/Google%20Pixel%202%20-%202.png?token=GHSAT0AAAAAABTPO7Q6P7KZDFF434SGRKIKYTW56NQ">
+  
+  <img src="https://raw.githubusercontent.com/HalukHackali/motorotam/master/assets/images/detail.png?token=GHSAT0AAAAAABTPO7Q72XVLGN5RNVNLPSZGYTW6DUA">
+</div>
 
 > ### Uygulamanın Kısmen Bitmiş Bölümleri
 > - Splash Screen
 > - Main Screen
 > - Detail Screen
-----
 
-<img src="https://raw.githubusercontent.com/HalukHackali/.png" width="400">
 
 ---
 ### My top 10 technologies

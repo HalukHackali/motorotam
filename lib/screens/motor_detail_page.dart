@@ -1,5 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
 import 'package:motorotam/components/properties_motor_card.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -154,46 +153,7 @@ class MotorDetailPage extends StatelessWidget {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: const [
-                Icon(
-                  Icons.workspaces_filled,
-                  size: 18.0,
-                ),
-                 SizedBox(
-                  width: 5,
-                ),
-                 Text(
-                  "Genel",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                 Text(
-                  "Version: Standart",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                 Text(
-                  "2022 Fiyat: 132,900 ₺",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
+
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -218,7 +178,7 @@ class MotorDetailPage extends StatelessWidget {
             child: Row(
               children: const [
                 Text(
-                  "Silindir Sayısı: Tek Silindir",
+                  "Motor Tipi: 1 silindirli 4 zamanlı benzinli motor",
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
                 ),
               ],
@@ -229,7 +189,7 @@ class MotorDetailPage extends StatelessWidget {
             child: Row(
               children: const [
                 Text(
-                  "Motor Hacmi: 249 cc",
+                  "Motor Hacmi: 373 cc",
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
                 ),
               ],
@@ -240,14 +200,64 @@ class MotorDetailPage extends StatelessWidget {
             child: Row(
               children: const [
                 Text(
-                  "Soğutma: Su ",
+                  "Güç: 32 kW (44 hp)",
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
                 ),
               ],
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Şanzıman: Sıralı, 6 vites)",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Debriyaj: PASC kaydırmalı debriyaj",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Soğutma: Sıvı soğutma",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Ateşleme Tertibatı: Bosch EMS",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          const Divider(
+            indent: 14,
+            endIndent: 14,
+            height: 30,
+            thickness: 5,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 0, right: 8, left: 8, bottom: 8),
             child: Row(
               children: const [
                 Icon(
@@ -258,7 +268,7 @@ class MotorDetailPage extends StatelessWidget {
                   width: 5,
                 ),
                 Text(
-                  "Fren",
+                  "YÜRÜYEN AKSAM",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ],
@@ -269,7 +279,151 @@ class MotorDetailPage extends StatelessWidget {
             child: Row(
               children: const [
                 Text(
-                  "Ön/Arka: Disk/Abs - Disk/Abs (Bybre)",
+                  "Şasi: Çelik borulardan ana boru şasi, toz kaplama",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Ön Amortisör: WP APEX 43",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Arka Amortisör: WP APEX Monoshock",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Ön Fren: Dört pistonlu / Disk fren",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Arka Fren: Tek pistonlu / Disk fren",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Fren Diskleri Çap Ön/Arka: 320 mm / 230 mm",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Zincir: 3520 X-Ring",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Ön Lastik Ebat: 110/70 17",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Arka Lastik: 150/60 17",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Yerden Yükseklik: 175 mm",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Oturma Yüksekliği: 830 mm",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Yakıt deposu: 13.4 l",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Yakıtsız ağırlık yaklaşık: 149 kg",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 40,),
+            child: Row(
+              children: const [
+                Text(
+                  "Ortalama Yakıt Tüketimi: 3.46 l/100 km",
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
                 ),
               ],

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:motorotam/components/appbar_widget.dart';
 import 'package:motorotam/components/properties_motor_card.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import '../components/motor_detail_widget.dart';
@@ -11,33 +12,7 @@ class MotorDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFEEEDE9),
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(29, 31, 32, 1),
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
-              icon: const Icon(Icons.menu),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-            );
-          },
-        ),
-        title: const Text("KTM 390 Duke"),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.favorite_border),
-            tooltip: 'Favoriler',
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: const Icon(Icons.settings),
-            tooltip: 'Ayarlar',
-            onPressed: () {},
-          ),
-        ],
-      ),
+      appBar: AppBarWidget(),
       body: ListView(
         children: [
           ResponsiveRowColumn(

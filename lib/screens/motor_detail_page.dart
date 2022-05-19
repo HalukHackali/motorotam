@@ -12,7 +12,7 @@ class MotorDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFEEEDE9),
-      appBar: AppBarWidget(),
+      appBar: AppBarWidgets(),
       body: ListView(
         children: [
           ResponsiveRowColumn(

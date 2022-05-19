@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:motorotam/components/appbar_widget.dart';
 import 'package:motorotam/screens/motor_detail_page.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import '../components/category_bar.dart';
@@ -6,15 +7,15 @@ import '../components/motor_card.dart';
 import '../components/top_brands.dart';
 import '../components/yatay_list.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatelessWidget  {
   const MainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: const Color(0xFFEEEDE9),
-      appBar: AppBarWidget(),
+      backgroundColor: const Color(0xFFEEEDEF),
+      appBar: AppBarWidgets(),
       body: Align(
         alignment: Alignment.center,
         child: ListView(
@@ -55,8 +56,8 @@ class MainPage extends StatelessWidget {
             ),
             const CategoryBar(),
             ResponsiveRowColumn(
-              rowPadding: const EdgeInsets.all(0),
-              layout: ResponsiveWrapper.of(context).isSmallerThan(TABLET)
+              columnPadding: const EdgeInsets.all(12),
+              layout: ResponsiveWrapper.of(context).isSmallerThan(MOBILE)
                   ? ResponsiveRowColumnType.COLUMN
                   : ResponsiveRowColumnType.ROW,
               children: [
@@ -74,63 +75,64 @@ class MainPage extends StatelessWidget {
                     child: const MotorCard(),
                   ),
                 ),
-                const ResponsiveRowColumnItem(
+                ResponsiveRowColumnItem(
                   rowFlex: 1,
-                  child:  MotorCard(),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MotorDetailPage(),
+                        ),
+                      );
+                    },
+                    child: const MotorCard(),
+                  ),
                 ),
+
               ],
             ),
             ResponsiveRowColumn(
-              rowMainAxisAlignment: MainAxisAlignment.center,
-              rowPadding: const EdgeInsets.all(0),
-              columnPadding: const EdgeInsets.all(0),
-              layout: ResponsiveWrapper.of(context).isSmallerThan(TABLET)
+              columnPadding: const EdgeInsets.all(12),
+              layout: ResponsiveWrapper.of(context).isSmallerThan(MOBILE)
                   ? ResponsiveRowColumnType.COLUMN
                   : ResponsiveRowColumnType.ROW,
-              children: const [
+              children: [
                 ResponsiveRowColumnItem(
                   rowFlex: 1,
-                  child: MotorCard(),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MotorDetailPage(),
+                        ),
+                      );
+                    },
+                    child: const MotorCard(),
+                  ),
                 ),
                 ResponsiveRowColumnItem(
                   rowFlex: 1,
-                  child: MotorCard(),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MotorDetailPage(),
+                        ),
+                      );
+                    },
+                    child: const MotorCard(),
+                  ),
                 ),
+
               ],
             ),
+
           ],
         ),
       ),
-    );
-  }
-
-  AppBar AppBarWidget() {
-    return AppBar(
-      backgroundColor: const Color.fromRGBO(29, 31, 32, 1),
-      leading: Builder(
-        builder: (BuildContext context) {
-          return IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-            tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-          );
-        },
-      ),
-      title: const Text("MotoRotam"),
-      actions: [
-        IconButton(
-          icon: const Icon(Icons.favorite_border),
-          tooltip: 'Favoriler',
-          onPressed: () {},
-        ),
-        IconButton(
-          icon: const Icon(Icons.settings),
-          tooltip: 'Ayarlar',
-          onPressed: () {},
-        ),
-      ],
     );
   }
 }

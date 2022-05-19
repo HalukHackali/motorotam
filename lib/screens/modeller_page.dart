@@ -15,7 +15,7 @@ class ModellerPageWidget extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color(0xFFEEEDE9),
-      appBar: AppBarWidget(),
+      appBar: AppBarWidgets(),
       body: Align(
         alignment: Alignment.center,
         child: ListView(
@@ -90,15 +90,15 @@ class ModellerPageWidget extends StatelessWidget {
                             valueWhen: const [
                               Condition.smallerThan(
                                 name: MOBILE,
-                                value: 215.0,
-                              ),
-                              Condition.largerThan(
-                                name: TABLET,
                                 value: 400.0,
                               ),
                               Condition.largerThan(
+                                name: TABLET,
+                                value: 500.0,
+                              ),
+                              Condition.largerThan(
                                 name: DESKTOP,
-                                value: 550.0,
+                                value: 1200.0,
                               ),
                             ],
                           ).value,
@@ -129,13 +129,13 @@ class ModellerPageWidget extends StatelessWidget {
               ],
             ),
             ResponsiveRowColumn(
-              rowPadding: const EdgeInsets.all(0),
+              rowPadding: EdgeInsets.all(0),
               layout: ResponsiveWrapper.of(context).isSmallerThan(MOBILE)
                   ? ResponsiveRowColumnType.COLUMN
                   : ResponsiveRowColumnType.ROW,
               children: [
                 ResponsiveRowColumnItem(
-                  rowFlex: 2,
+                  rowFlex: 1,
                   child: GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -148,13 +148,23 @@ class ModellerPageWidget extends StatelessWidget {
                     child: const MotorCard(),
                   ),
                 ),
-                const ResponsiveRowColumnItem(
-                  rowFlex: 2,
-                  child: MotorCard(),
+                ResponsiveRowColumnItem(
+                  rowFlex: 1,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MotorDetailPage(),
+                        ),
+                      );
+                    },
+                    child: const MotorCard(),
+                  ),
                 ),
+
               ],
             ),
-
           ],
         ),
       ),

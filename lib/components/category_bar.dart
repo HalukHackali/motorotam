@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:motorotam/screens/modeller_page.dart';
 
 class CategoryBar extends StatelessWidget {
   const CategoryBar({
@@ -34,39 +35,49 @@ class CategoryBar extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(
-                            width: 90,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(0),
-                                topRight: Radius.circular(0),
-                                bottomLeft: Radius.circular(20),
-                                bottomRight: Radius.circular(0),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.9),
-                                  spreadRadius: 1,
-                                  blurRadius: 2,
-                                  offset: const Offset(0.1, 4),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const ModellerPageWidget(),
                                 ),
-                              ],
-                              color: Colors.white,
-                            ),
-                            child: const Center(
-                              child: RotatedBox(
-                                quarterTurns: 4,
-                                child: Text(
-                                  'Racing',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      color: Color.fromRGBO(0, 0, 0, 1),
-                                      fontFamily: 'Inter',
-                                      fontSize: 18,
-                                      letterSpacing: 0,
-                                      fontWeight: FontWeight.normal,
-                                      height: 1),
+                              );
+                            },
+                            child: Container(
+                              width: 90,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(0),
+                                  topRight: Radius.circular(0),
+                                  bottomLeft: Radius.circular(20),
+                                  bottomRight: Radius.circular(0),
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.9),
+                                    spreadRadius: 1,
+                                    blurRadius: 2,
+                                    offset: const Offset(0.1, 4),
+                                  ),
+                                ],
+                                color: Colors.white,
+                              ),
+                              child: const Center(
+                                child: RotatedBox(
+                                  quarterTurns: 4,
+                                  child: Text(
+                                    'Racing',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Color.fromRGBO(0, 0, 0, 1),
+                                        fontFamily: 'Inter',
+                                        fontSize: 18,
+                                        letterSpacing: 0,
+                                        fontWeight: FontWeight.normal,
+                                        height: 1),
+                                  ),
                                 ),
                               ),
                             ),

@@ -1,7 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:motorotam/confing/size_config.dart';
-
 
 class YatayListMarka extends StatelessWidget {
   const YatayListMarka({Key? key}) : super(key: key);

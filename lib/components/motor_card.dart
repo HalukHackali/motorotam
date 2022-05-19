@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class MotorCard extends StatelessWidget {
   const MotorCard({
@@ -15,6 +16,7 @@ class MotorCard extends StatelessWidget {
       child: SizedBox(
         width: screenWidth,
         child: Card(
+          borderOnForeground: true,
           margin: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
             side: const BorderSide(
@@ -29,18 +31,50 @@ class MotorCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset("assets/images/390_Duke.jpg", ),
+                Image.asset(
+                  "assets/images/390_Duke.jpg",
+                ),
                 ListTile(
-                  title: const Text(
+                  title: Text(
                     'KTM Duke 390',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
+                    style: TextStyle(
+                        fontSize: ResponsiveValue(
+                          context,
+                          defaultValue: 18.0,
+                          valueWhen: const [
+                            Condition.smallerThan(
+                              name: MOBILE,
+                              value: 24.0,
+                            ),
+                            Condition.largerThan(
+                              name: TABLET,
+                              value: 26.0,
+                            )
+                          ],
+                        ).value,
+                        color: Colors.white),
                   ),
                   subtitle: Text(
                     '2022',
                     style: TextStyle(
-                        color: Colors.white.withOpacity(0.6), fontSize: 18),
+                        color: Colors.white.withOpacity(0.6),
+                      fontSize: ResponsiveValue(
+                      context,
+                      defaultValue: 16.0,
+                      valueWhen: const [
+                        Condition.smallerThan(
+                          name: MOBILE,
+                          value: 18.0,
+                        ),
+                        Condition.largerThan(
+                          name: TABLET,
+                          value: 20.0,
+                        )
+                      ],
+                    ).value,),
                   ),
                 ),
+
                 ListTile(
                   leading: RatingBar.builder(
                     initialRating: 3,
@@ -63,7 +97,20 @@ class MotorCard extends StatelessWidget {
                   trailing: Text(
                     '132,900 ₺',
                     style: TextStyle(
-                        color: Colors.white.withOpacity(0.6), fontSize: 18),
+                        color: Colors.white.withOpacity(0.6), fontSize: ResponsiveValue(
+                      context,
+                      defaultValue: 14.0,
+                      valueWhen: const [
+                        Condition.smallerThan(
+                          name: MOBILE,
+                          value: 16.0,
+                        ),
+                        Condition.largerThan(
+                          name: TABLET,
+                          value: 20.0,
+                        )
+                      ],
+                    ).value,),
                   ),
                 ),
               ],

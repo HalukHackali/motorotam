@@ -145,7 +145,7 @@ class ModellerPageWidget extends StatelessWidget {
                         ),
                       );
                     },
-                    child: const MotorCard(),
+                    child:   MotorCard(baslik: 'KTM 250', fiyat: '123.0', resim: "assets/images/390_Duke.jpg", yildiz: 3, yil: '2022',),
                   ),
                 ),
                 ResponsiveRowColumnItem(
@@ -159,7 +159,7 @@ class ModellerPageWidget extends StatelessWidget {
                         ),
                       );
                     },
-                    child: const MotorCard(),
+                    child:  MotorCard(baslik: 'KTM 390', fiyat: '123.0', resim: "assets/images/390_Duke.jpg", yildiz: 2, yil: '2022', ),
                   ),
                 ),
 

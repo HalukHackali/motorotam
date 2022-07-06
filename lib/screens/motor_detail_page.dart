@@ -5,6 +5,7 @@ import 'package:responsive_framework/responsive_framework.dart';
 import '../components/motor_detail_widget.dart';
 
 class MotorDetailPage extends StatelessWidget {
+
   const MotorDetailPage({Key? key}) : super(key: key);
 
   @override

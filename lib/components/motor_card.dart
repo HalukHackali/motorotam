@@ -4,8 +4,14 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class MotorCard extends StatelessWidget {
+  final String resim;
+  final String baslik;
+  final String yil;
+  final String fiyat;
+  final double yildiz;
+
   const MotorCard({
-    Key? key,
+    Key? key, required this.resim, required this.baslik, required this.fiyat, required this.yildiz, required this.yil,
   }) : super(key: key);
 
   @override
@@ -32,11 +38,11 @@ class MotorCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.asset(
-                  "assets/images/390_Duke.jpg",
+                  resim
                 ),
                 ListTile(
                   title: Text(
-                    'KTM Duke 390',
+                    baslik,
                     style: TextStyle(
                         fontSize: ResponsiveValue(
                           context,
@@ -55,7 +61,7 @@ class MotorCard extends StatelessWidget {
                         color: Colors.white),
                   ),
                   subtitle: Text(
-                    '2022',
+                    yil,
                     style: TextStyle(
                         color: Colors.white.withOpacity(0.6),
                       fontSize: ResponsiveValue(
@@ -77,12 +83,12 @@ class MotorCard extends StatelessWidget {
 
                 ListTile(
                   leading: RatingBar.builder(
-                    initialRating: 3,
+                    initialRating: yildiz,
                     minRating: 1,
                     direction: Axis.horizontal,
                     allowHalfRating: true,
                     itemCount: 5,
-                    itemSize: 24.0,
+                    itemSize: 20.0,
                     itemPadding: const EdgeInsets.symmetric(horizontal: 0.1),
                     itemBuilder: (context, _) => const Icon(
                       Icons.star,
@@ -95,7 +101,7 @@ class MotorCard extends StatelessWidget {
                     },
                   ),
                   trailing: Text(
-                    '132,900 ₺',
+                    fiyat,
                     style: TextStyle(
                         color: Colors.white.withOpacity(0.6), fontSize: ResponsiveValue(
                       context,

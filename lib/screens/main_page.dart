@@ -72,7 +72,7 @@ class MainPage extends StatelessWidget  {
                         ),
                       );
                     },
-                    child: const MotorCard(),
+                    child: const MotorCard(baslik: 'KTM 250', fiyat: '123.0', resim: "assets/images/390_Duke.jpg", yildiz: 2, yil: '2022',),
                   ),
                 ),
                 ResponsiveRowColumnItem(
@@ -86,7 +86,7 @@ class MainPage extends StatelessWidget  {
                         ),
                       );
                     },
-                    child: const MotorCard(),
+                    child: const MotorCard(baslik: 'KTM 390', fiyat: '123.0', resim: "assets/images/390_Duke.jpg", yildiz: 3, yil: '2022',),
                   ),
                 ),
 
@@ -109,7 +109,7 @@ class MainPage extends StatelessWidget  {
                         ),
                       );
                     },
-                    child: const MotorCard(),
+                    child: const MotorCard(baslik: 'KTM 690', fiyat: '123.0', resim: "assets/images/390_Duke.jpg", yildiz: 5.0, yil: '2022',  ),
                   ),
                 ),
                 ResponsiveRowColumnItem(
@@ -123,7 +123,7 @@ class MainPage extends StatelessWidget  {
                         ),
                       );
                     },
-                    child: const MotorCard(),
+                    child: const MotorCard(baslik: 'KTM 790', fiyat: '123.0', resim: "assets/images/390_Duke.jpg", yildiz: 3.5, yil: '2022',),
                   ),
                 ),
 

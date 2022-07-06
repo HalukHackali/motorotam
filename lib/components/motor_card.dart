@@ -88,7 +88,7 @@ class MotorCard extends StatelessWidget {
                     direction: Axis.horizontal,
                     allowHalfRating: true,
                     itemCount: 5,
-                    itemSize: 20.0,
+                    itemSize: 18.0,
                     itemPadding: const EdgeInsets.symmetric(horizontal: 0.1),
                     itemBuilder: (context, _) => const Icon(
                       Icons.star,
@@ -101,7 +101,7 @@ class MotorCard extends StatelessWidget {
                     },
                   ),
                   trailing: Text(
-                    fiyat,
+                    '$fiyat ₺',
                     style: TextStyle(
                         color: Colors.white.withOpacity(0.6), fontSize: ResponsiveValue(
                       context,

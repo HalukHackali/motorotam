@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:motorotam/components/appbar_widget.dart';
 import 'package:motorotam/components/properties_motor_card.dart';
@@ -72,44 +71,21 @@ class MotorDetailPage extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Container(
-                      width: 24,
-                      height: 24,
-                      decoration: BoxDecoration(
-                          boxShadow: const [
-                            BoxShadow(
-                              spreadRadius: 1,
-                              color: Colors.black26,
-                              offset: Offset(1, 1),
-                              blurRadius: 3,
-                            )
-                          ],
-                          border: Border.all(
-                            color: Colors.black12,
-                          ),
-                          color: const Color.fromRGBO(255, 81, 6, 1),
-                          shape: BoxShape.circle),
+                    motorRenkSecici(
+                      renk: Color.fromRGBO(255, 81, 6, 1),
+                      border: Colors.black12,
+                      shadowRenk: Colors.black26,
                     ),
                     const SizedBox(
                       width: 5,
                     ),
-                    Container(
-                      width: 24,
-                      height: 24,
-                      decoration: BoxDecoration(
-                          boxShadow: const [
-                            BoxShadow(
-                              spreadRadius: 1,
-                              color: Colors.black26,
-                              offset: Offset(1, 1),
-                              blurRadius: 3,
-                            )
-                          ],
-                          border: Border.all(
-                            color: Colors.black12,
-                          ),
-                          color: Colors.white,
-                          shape: BoxShape.circle),
+                    motorRenkSecici(
+                      renk: Colors.white,
+                      border: Colors.black12,
+                      shadowRenk: Colors.black26,
+                    ),
+                    const SizedBox(
+                      width: 5,
                     ),
                   ],
                 ),
@@ -128,281 +104,155 @@ class MotorDetailPage extends StatelessWidget {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
-
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: const [
-                Icon(
-                  Icons.workspaces_filled,
-                  size: 18.0,
-                ),
-                SizedBox(
-                  width: 5,
-                ),
-                Text(
-                  "Motor",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          ),
-
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Motor Tipi: 1 silindirli 4 zamanlı benzinli motor",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Motor Hacmi: 373 cc",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Güç: 32 kW (44 hp)",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Şanzıman: Sıralı, 6 vites)",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Debriyaj: PASC kaydırmalı debriyaj",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Soğutma: Sıvı soğutma",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Ateşleme Tertibatı: Bosch EMS",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
+          ozellikBasliklari(baslik: 'Motor'),
+          motorOzellikleri(
+              anahtar: 'Motor Tipi : ',
+              deger: '1 silindirli, 4 zamanlı,benzinli'),
+          motorOzellikleri(anahtar: 'Motor Hacmi: ', deger: '373 cc'),
+          motorOzellikleri(anahtar: 'Güç: ', deger: '32 kW (44 hp)'),
+          motorOzellikleri(anahtar: 'Şanzıman: ', deger: 'Sıralı, 6 vites'),
+          motorOzellikleri(
+              anahtar: 'ŞanzDebriyaj: ', deger: 'PASC kaydırmalı debriyaj'),
+          motorOzellikleri(anahtar: 'Soğutma: ', deger: 'Sıvı soğutma'),
+          motorOzellikleri(anahtar: 'Ateşleme Tertibatı: ', deger: 'Bosch EMS'),
           const Divider(
             indent: 14,
             endIndent: 14,
             height: 30,
             thickness: 5,
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 0, right: 8, left: 8, bottom: 8),
-            child: Row(
-              children: const [
-                Icon(
-                  Icons.workspaces_filled,
-                  size: 18.0,
-                ),
-                SizedBox(
-                  width: 5,
-                ),
-                Text(
-                  "YÜRÜYEN AKSAM",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Şasi: Çelik borulardan ana boru şasi, toz kaplama",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Ön Amortisör: WP APEX 43",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Arka Amortisör: WP APEX Monoshock",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Ön Fren: Dört pistonlu / Disk fren",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
+          ozellikBasliklari(baslik: 'Yürüyen Aksam'),
+          yuruyenAksamOzellikleri(
+              anahtar: 'Şasi: ',
+              deger: 'Çelik borulardan ana boru şasi, toz kaplama'),
+          yuruyenAksamOzellikleri(
+              anahtar: 'Ön Amortisör: ', deger: 'WP APEX 43'),
+          yuruyenAksamOzellikleri(
+              anahtar: 'Arka Amortisör: ', deger: 'WP APEX Monoshock'),
+          yuruyenAksamOzellikleri(
+              anahtar: 'Ön Fren: ', deger: 'Dört pistonlu / Disk fren'),
+          yuruyenAksamOzellikleri(
+              anahtar: 'Arka Fren: ', deger: 'Tek pistonlu / Disk fren'),
+          yuruyenAksamOzellikleri(
+              anahtar: 'Fren Diskleri Çap Ön/Arka: ', deger: '320 mm / 230 mm'),
+          yuruyenAksamOzellikleri(anahtar: 'Zincir: ', deger: '3520 X-Ring'),
+          yuruyenAksamOzellikleri(
+              anahtar: 'Ön Lastik Ebat: ', deger: '110/70 17'),
+          yuruyenAksamOzellikleri(anahtar: 'Arka Lastik: ', deger: '150/60 17'),
+          yuruyenAksamOzellikleri(
+              anahtar: 'Yerden Yükseklik: ', deger: '175 mm'),
+          yuruyenAksamOzellikleri(
+              anahtar: 'Oturma Yüksekliği: ', deger: '830 mm'),
+          yuruyenAksamOzellikleri(anahtar: 'Yakıt deposu: ', deger: '13.4 l'),
+          yuruyenAksamOzellikleri(
+              anahtar: 'Yakıtsız ağırlık yaklaşık: ', deger: '149 kg'),
+          yuruyenAksamOzellikleri(
+              anahtar: 'Ortalama Yakıt Tüketimi: ', deger: '3.46 l/100 km'),
+        ],
+      ),
+    );
+  }
 
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Arka Fren: Tek pistonlu / Disk fren",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+  Container motorRenkSecici(
+      {required Color renk, required Color shadowRenk, required Color border}) {
+    return Container(
+      width: 24,
+      height: 24,
+      decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              spreadRadius: 1,
+              color: shadowRenk,
+              offset: Offset(1, 1),
+              blurRadius: 3,
+            )
+          ],
+          border: Border.all(
+            color: border,
+          ),
+          color: renk,
+          shape: BoxShape.circle),
+    );
+  }
+
+  Padding motorOzellikleri({required String anahtar, required String deger}) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 5,
+        left: 40,
+      ),
+      child: Row(
+        children: [
+          RichText(
+            text: TextSpan(
+              text: anahtar,
+              style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
+              children: <TextSpan>[
+                TextSpan(
+                  text: deger,
+                  style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black),
                 ),
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Fren Diskleri Çap Ön/Arka: 320 mm / 230 mm",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+        ],
+      ),
+    );
+  }
+
+  Padding yuruyenAksamOzellikleri(
+      {required String anahtar, required String deger}) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 5,
+        left: 40,
+      ),
+      child: Row(
+        children: [
+          RichText(
+            text: TextSpan(
+              text: anahtar,
+              style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
+              children: <TextSpan>[
+                TextSpan(
+                  text: deger,
+                  style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black),
                 ),
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Zincir: 3520 X-Ring",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
+        ],
+      ),
+    );
+  }
+
+  Padding ozellikBasliklari({required String baslik}) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: [
+          const Icon(
+            Icons.workspaces_filled,
+            size: 18.0,
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Ön Lastik Ebat: 110/70 17",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
+          const SizedBox(
+            width: 5,
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Arka Lastik: 150/60 17",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Yerden Yükseklik: 175 mm",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Oturma Yüksekliği: 830 mm",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Yakıt deposu: 13.4 l",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Yakıtsız ağırlık yaklaşık: 149 kg",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 40,),
-            child: Row(
-              children: const [
-                Text(
-                  "Ortalama Yakıt Tüketimi: 3.46 l/100 km",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
+          Text(
+            baslik,
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
         ],
       ),

@@ -3,6 +3,11 @@ import 'package:motorotam/screens/main_page.dart';
 
 
 class AppBarWidgets extends StatelessWidget implements PreferredSizeWidget  {
+
+  late String baslik;
+
+   AppBarWidgets({Key? key, required this.baslik}) : super(key: key);
+
   @override
   Size get preferredSize => const Size.fromHeight(60);
 
@@ -21,7 +26,7 @@ class AppBarWidgets extends StatelessWidget implements PreferredSizeWidget  {
           );
         },
       ),
-      title: const Text("MotoRotam"),
+      title:  Text(baslik),
       actions: [
         IconButton(
             icon: const Icon(Icons.home_filled),

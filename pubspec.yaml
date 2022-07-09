@@ -59,7 +59,10 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/ktm_250/
+    - assets/images/ktm_890/
     - assets/images/icons_card/
+    - assets/jsons/markalar_modeller.json
 
 
 

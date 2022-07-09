@@ -5,24 +5,89 @@ import 'package:responsive_framework/responsive_framework.dart';
 import '../components/motor_detail_widget.dart';
 
 class MotorDetailPage extends StatelessWidget {
+  String motorModel;
+  String motorResim;
+  String motorResimLeft;
+  String motorResimRight;
+  String motorFiyat;
+  double motorYildiz;
+  String motorHacim;
+  String motorFren;
+  String motorPower;
+  String motorHiz;
+  String motorTork;
+  String motorTipi;
+  String motorSanziman;
+  String motorDebriyaj;
+  String motorSogutma;
+  String motorAtesleme;
+  String motorSasi;
+  String motorOnAmortisor;
+  String motorArkaAmortisor;
+  String motorOnFren;
+  String motorFrenDiskCap;
+  String motorArkaFren;
+  String motorOnLastik;
+  String motorArkaLastik;
+  String motorYukseklik;
+  String motorYakitDeposu;
+  String motorOrtalamaYakit;
+  String motorZincir;
+  String motorAgirlik;
 
-  const MotorDetailPage({Key? key}) : super(key: key);
+  MotorDetailPage({
+    Key? key,
+    required this.motorModel,
+    required this.motorAtesleme,
+    required this.motorResim,
+    required this.motorResimLeft,
+    required this.motorResimRight,
+    required this.motorOnLastik,
+    required this.motorFrenDiskCap,
+    required this.motorArkaLastik,
+    required this.motorYukseklik,
+    required this.motorYakitDeposu,
+    required this.motorOrtalamaYakit,
+    required this.motorOnAmortisor,
+    required this.motorArkaAmortisor,
+    required this.motorOnFren,
+    required this.motorArkaFren,
+    required this.motorFiyat,
+    required this.motorHacim,
+    required this.motorFren,
+    required this.motorPower,
+    required this.motorHiz,
+    required this.motorTork,
+    required this.motorTipi,
+    required this.motorSanziman,
+    required this.motorDebriyaj,
+    required this.motorSogutma,
+    required this.motorSasi,
+    required this.motorZincir,
+    required this.motorAgirlik,
+    required this.motorYildiz,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFEEEDE9),
-      appBar: AppBarWidgets(),
+      appBar: AppBarWidgets(
+        baslik: motorModel,
+      ),
       body: ListView(
         children: [
           ResponsiveRowColumn(
             layout: ResponsiveWrapper.of(context).isSmallerThan(TABLET)
                 ? ResponsiveRowColumnType.COLUMN
                 : ResponsiveRowColumnType.ROW,
-            children: const [
+            children:  [
               ResponsiveRowColumnItem(
                 rowFlex: 1,
-                child: MotorDetailWidget(),
+                child: MotorDetailWidget(
+                  motorResim: motorResim,
+                  motorResimRight: motorResimRight,
+                  motorResimLeft: motorResimLeft,),
               ),
             ],
           ),
@@ -33,11 +98,11 @@ class MotorDetailPage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Expanded(
+                Expanded(
                   flex: 3,
                   child: Text(
-                    "132,900 ₺",
-                    style: TextStyle(
+                    motorFiyat,
+                    style: const TextStyle(
                         color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.bold),
@@ -46,17 +111,17 @@ class MotorDetailPage extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: Row(
-                    children: const [
-                      Icon(
+                    children: [
+                      const Icon(
                         Icons.star,
                         color: Colors.amber,
                       ),
-                      Text("4.8",
+                      Text(motorYildiz.toString(),
                           style: TextStyle(color: Colors.amber, fontSize: 18)),
                     ],
                   ),
                 ),
-                const Text("4260 Reviews",
+                const Text("4260 Reviews ",
                     style: TextStyle(color: Colors.white, fontSize: 14)),
               ],
             ),
@@ -73,7 +138,7 @@ class MotorDetailPage extends StatelessWidget {
                 Row(
                   children: [
                     motorRenkSecici(
-                      renk: Color.fromRGBO(255, 81, 6, 1),
+                      renk: const Color.fromRGBO(255, 81, 6, 1),
                       border: Colors.black12,
                       shadowRenk: Colors.black26,
                     ),
@@ -94,8 +159,14 @@ class MotorDetailPage extends StatelessWidget {
             ),
           ),
           Row(
-            children: const [
-              PropertiesMotorCard(),
+            children: [
+              PropertiesMotorCard(
+                motorHacim: motorHacim,
+                motorPower: motorPower,
+                motorFren: motorFren,
+                motorHiz: motorHiz,
+                motorTork: motorTork,
+              ),
             ],
           ),
           const Padding(
@@ -106,16 +177,14 @@ class MotorDetailPage extends StatelessWidget {
             ),
           ),
           ozellikBasliklari(baslik: 'Motor'),
+          motorOzellikleri(anahtar: 'Motor Tipi : ', deger: motorTipi),
+          motorOzellikleri(anahtar: 'Motor Hacmi: ', deger: motorHacim),
+          motorOzellikleri(anahtar: 'Güç: ', deger: motorPower),
+          motorOzellikleri(anahtar: 'Şanzıman: ', deger: motorSanziman),
+          motorOzellikleri(anahtar: 'Debriyaj: ', deger: motorDebriyaj),
+          motorOzellikleri(anahtar: 'Soğutma: ', deger: motorSogutma),
           motorOzellikleri(
-              anahtar: 'Motor Tipi : ',
-              deger: '1 silindirli, 4 zamanlı,benzinli'),
-          motorOzellikleri(anahtar: 'Motor Hacmi: ', deger: '373 cc'),
-          motorOzellikleri(anahtar: 'Güç: ', deger: '32 kW (44 hp)'),
-          motorOzellikleri(anahtar: 'Şanzıman: ', deger: 'Sıralı, 6 vites'),
-          motorOzellikleri(
-              anahtar: 'ŞanzDebriyaj: ', deger: 'PASC kaydırmalı debriyaj'),
-          motorOzellikleri(anahtar: 'Soğutma: ', deger: 'Sıvı soğutma'),
-          motorOzellikleri(anahtar: 'Ateşleme Tertibatı: ', deger: 'Bosch EMS'),
+              anahtar: 'Ateşleme Tertibatı: ', deger: motorAtesleme),
           const Divider(
             indent: 14,
             endIndent: 14,
@@ -123,32 +192,29 @@ class MotorDetailPage extends StatelessWidget {
             thickness: 5,
           ),
           ozellikBasliklari(baslik: 'Yürüyen Aksam'),
+          yuruyenAksamOzellikleri(anahtar: 'Şasi: ', deger: motorSasi),
           yuruyenAksamOzellikleri(
-              anahtar: 'Şasi: ',
-              deger: 'Çelik borulardan ana boru şasi, toz kaplama'),
+              anahtar: 'Ön Amortisör: ', deger: motorOnAmortisor),
           yuruyenAksamOzellikleri(
-              anahtar: 'Ön Amortisör: ', deger: 'WP APEX 43'),
+              anahtar: 'Arka Amortisör: ', deger: motorArkaAmortisor),
+          yuruyenAksamOzellikleri(anahtar: 'Ön Fren: ', deger: motorOnFren),
+          yuruyenAksamOzellikleri(anahtar: 'Arka Fren: ', deger: motorArkaFren),
           yuruyenAksamOzellikleri(
-              anahtar: 'Arka Amortisör: ', deger: 'WP APEX Monoshock'),
+              anahtar: 'Fren Diskleri Çap Ön/Arka: ', deger: motorFrenDiskCap),
+          yuruyenAksamOzellikleri(anahtar: 'Zincir: ', deger: motorZincir),
           yuruyenAksamOzellikleri(
-              anahtar: 'Ön Fren: ', deger: 'Dört pistonlu / Disk fren'),
+              anahtar: 'Ön Lastik Ebat: ', deger: motorOnLastik),
           yuruyenAksamOzellikleri(
-              anahtar: 'Arka Fren: ', deger: 'Tek pistonlu / Disk fren'),
+              anahtar: 'Arka Lastik: ', deger: motorArkaLastik),
           yuruyenAksamOzellikleri(
-              anahtar: 'Fren Diskleri Çap Ön/Arka: ', deger: '320 mm / 230 mm'),
-          yuruyenAksamOzellikleri(anahtar: 'Zincir: ', deger: '3520 X-Ring'),
+              anahtar: 'Oturma Yüksekliği: ', deger: motorYukseklik + ' mm'),
           yuruyenAksamOzellikleri(
-              anahtar: 'Ön Lastik Ebat: ', deger: '110/70 17'),
-          yuruyenAksamOzellikleri(anahtar: 'Arka Lastik: ', deger: '150/60 17'),
+              anahtar: 'Yakıt deposu: ', deger: motorYakitDeposu + ' Litre'),
           yuruyenAksamOzellikleri(
-              anahtar: 'Yerden Yükseklik: ', deger: '175 mm'),
+              anahtar: 'Yakıtsız ağırlık yaklaşık: ',
+              deger: motorAgirlik + ' kg'),
           yuruyenAksamOzellikleri(
-              anahtar: 'Oturma Yüksekliği: ', deger: '830 mm'),
-          yuruyenAksamOzellikleri(anahtar: 'Yakıt deposu: ', deger: '13.4 l'),
-          yuruyenAksamOzellikleri(
-              anahtar: 'Yakıtsız ağırlık yaklaşık: ', deger: '149 kg'),
-          yuruyenAksamOzellikleri(
-              anahtar: 'Ortalama Yakıt Tüketimi: ', deger: '3.46 l/100 km'),
+              anahtar: 'Ortalama Yakıt Tüketimi: ', deger: motorOrtalamaYakit),
         ],
       ),
     );
@@ -164,7 +230,7 @@ class MotorDetailPage extends StatelessWidget {
             BoxShadow(
               spreadRadius: 1,
               color: shadowRenk,
-              offset: Offset(1, 1),
+              offset: const Offset(1, 1),
               blurRadius: 3,
             )
           ],

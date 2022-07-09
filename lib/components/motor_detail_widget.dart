@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:motorotam/model/models.dart';
 
 class MotorDetailWidget extends StatelessWidget {
-  const MotorDetailWidget({Key? key}) : super(key: key);
+  String motorResim;
+  String motorResimLeft;
+  String motorResimRight;
+
+   MotorDetailWidget({Key? key,
+     required this.motorResim,
+     required this.motorResimLeft,
+     required this.motorResimRight}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,12 +18,12 @@ class MotorDetailWidget extends StatelessWidget {
         //clipBehavior: Clip.none, fit: StackFit.expand,
         clipBehavior: Clip.antiAliasWithSaveLayer,
         children: <Widget>[
-          Image.asset("assets/images/390_Duke.jpg"),//Container
+          Image.asset(motorResim),//Container
           Positioned(
             top: 20,
             right: 10,
             child: SizedBox(
-              child: Image.asset("assets/images/390_Duke_3.jpg"),
+              child: Image.asset(motorResimLeft),
               width: 70,
             ),
           ),
@@ -23,7 +31,7 @@ class MotorDetailWidget extends StatelessWidget {
             top: 65,
             right: 10,
             child: SizedBox(
-              child: Image.asset("assets/images/390_Duke_2.jpg"),
+              child: Image.asset(motorResimRight),
               width: 70,
             ),
           ), //Container

@@ -2,8 +2,20 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class PropertiesMotorCard extends StatelessWidget {
-  const PropertiesMotorCard({
+  String motorHacim;
+  String motorPower;
+  String motorHiz;
+  String motorFren;
+  String motorTork;
+
+
+   PropertiesMotorCard({
     Key? key,
+    required this.motorHacim,
+    required this.motorPower,
+    required this.motorHiz,
+    required this.motorFren,
+    required this.motorTork,
   }) : super(key: key);
 
   @override
@@ -65,20 +77,20 @@ class PropertiesMotorCard extends StatelessWidget {
                                   fontFamily: 'Inter',
                                   fontSize: 16,
                                   letterSpacing: 0,
-                                  fontWeight: FontWeight.normal,
+                                  fontWeight: FontWeight.bold,
                                   height: 1),
                             ),
                           ),
-                          const Center(
+                           Center(
                             child: Text(
-                              '373.2cc',
+                               motorHacim,
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'Inter',
-                                  fontSize: 16,
+                                  fontSize: 12,
                                   letterSpacing: 0,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.normal,
                                   height: 1),
                             ),
                           ),
@@ -123,20 +135,20 @@ class PropertiesMotorCard extends StatelessWidget {
                                   fontFamily: 'Inter',
                                   fontSize: 16,
                                   letterSpacing: 0,
-                                  fontWeight: FontWeight.normal,
+                                  fontWeight: FontWeight.bold,
                                   height: 1),
                             ),
                           ),
-                          const Center(
+                           Center(
                             child: Text(
-                              '43.6 PS',
+                              motorPower,
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'Inter',
-                                  fontSize: 16,
+                                  fontSize: 12,
                                   letterSpacing: 0,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.normal,
                                   height: 1),
                             ),
                           ),
@@ -181,20 +193,20 @@ class PropertiesMotorCard extends StatelessWidget {
                                   fontFamily: 'Inter',
                                   fontSize: 16,
                                   letterSpacing: 0,
-                                  fontWeight: FontWeight.normal,
+                                  fontWeight: FontWeight.bold,
                                   height: 1),
                             ),
                           ),
-                          const Center(
+                           Center(
                             child: Text(
-                              '170/kms',
+                              motorHiz + ' km/h',
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'Inter',
-                                  fontSize: 16,
+                                  fontSize: 12,
                                   letterSpacing: 0,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.normal,
                                   height: 1),
                             ),
                           ),
@@ -239,7 +251,7 @@ class PropertiesMotorCard extends StatelessWidget {
                                   fontFamily: 'Inter',
                                   fontSize: 16,
                                   letterSpacing: 0,
-                                  fontWeight: FontWeight.normal,
+                                  fontWeight: FontWeight.bold,
                                   height: 1),
                             ),
                           ),
@@ -250,9 +262,9 @@ class PropertiesMotorCard extends StatelessWidget {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'Inter',
-                                  fontSize: 16,
+                                  fontSize: 12,
                                   letterSpacing: 0,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.normal,
                                   height: 1),
                             ),
                           ),
@@ -297,20 +309,20 @@ class PropertiesMotorCard extends StatelessWidget {
                                   fontFamily: 'Inter',
                                   fontSize: 16,
                                   letterSpacing: 0,
-                                  fontWeight: FontWeight.normal,
+                                  fontWeight: FontWeight.bold,
                                   height: 1),
                             ),
                           ),
-                          const Center(
+                           Center(
                             child: Text(
-                              '35 Nm',
+                              motorTork,
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'Inter',
-                                  fontSize: 16,
+                                  fontSize: 12,
                                   letterSpacing: 0,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.normal,
                                   height: 1),
                             ),
                           ),
